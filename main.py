@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 
 # Imports
+
 import math
 import random as rd
 import time
 import sys
-
-# Variables and functions
+from achievements import earn_unearned_achievement, milestone_names
 from strings import logo, morse
 
-credits_ects = 0
+# Variables
 
-achievements = dict()
-achievements["Morse"] = False
+credits_ects = 0
 
 # Intro cutscene
 
@@ -37,11 +36,9 @@ while True:
     input()
     credits_ects+=1
     print(f"Vous avez {credits_ects} crédits ECTS!")
-    if rd.randint(0,1000) == 0:
+    if rd.randint(0,999) == 0:
         print(morse)
-        print("Vous avez trouvé un morse! Curieux.")
-        if not achievements["Morse"]:
-            print("Achievement unlocked : Trouver un morse")
-            achievements["Morse"] = True
-    if (math.log10(credits_ects)%1==0):
-      print(f"Achievement unlocked : Obtenir {credits_ects} crédits !")
+        print("Vous avez trouvé un morse ! Curieux.")
+        earn_unearned_achievement("Morse")
+    if (credits_ects in milestone_names):
+        earn_unearned_achievement(milestone_names[credits_ects])
