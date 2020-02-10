@@ -41,7 +41,7 @@ while True:
         print(morse)
         print("Vous avez trouvé un morse! Curieux.")
         if not achievements["Morse"]:
-            print("Achievment unlocked : Trouver un morse")
+            print("Achievement unlocked : Trouver un morse")
             achievements["Morse"] = True
     if (math.log10(credits_ects)%1==0):
       print(f"Achievement unlocked : Obtenir {credits_ects} crédits !")
