@@ -37,7 +37,7 @@ while True:
     input()
     credits_ects+=1
     print(f"Vous avez {credits_ects} crédits ECTS!")
-    if rd.randint(0,1) == 0:
+    if rd.randint(0,1000) == 0:
         print(morse)
         print("Vous avez trouvé un morse! Curieux.")
         if not achievements["Morse"]:
