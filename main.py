@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import math
 import random as rd
 print("Bienvenue à l'expérience immersive de IMT clicker!\nAppuyer sur Entrée pour cliquer :)")
