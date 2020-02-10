@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 
+# Imports
 import math
 import random as rd
-print("Bienvenue à l'expérience immersive de IMT clicker!\nAppuyer sur Entrée pour cliquer :)")
+import time
+import sys
+
+# Variables and functions
+
 credits_ects = 0
 
 achievements = dict()
@@ -21,6 +26,35 @@ morse = r"""
     ('\      .___ ___.      /'.___=          \.\.\
      \\\-..____________..-''
 """
+logo = [
+" _______              ________",
+"|      /|\      /|   /       /",
+"|     / | \    / |  /       /",
+"|    /  |  \  /  | /       /",
+"|   /   |   \/   |/___    /",
+"|  /    |        |    |  /",
+"| /     |        |    | /",
+"|/      |________|    |/",
+]
+
+# Intro cutscene
+
+print("Bienvenue à l'expérience immersive de...")
+time.sleep(1)
+for line in logo:
+    print(line)
+    time.sleep(0.5)
+for c in "      ":
+    sys.stdout.write(c)
+    sys.stdout.flush()
+for c in "C L I C K E R":
+    sys.stdout.write(c)
+    sys.stdout.flush()
+    time.sleep(0.25)
+time.sleep(1)
+print("\nAppuyez sur Entrée pour cliquer :)")
+
+# Game logic
 
 while True:
     input()
