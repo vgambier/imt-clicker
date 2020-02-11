@@ -13,6 +13,25 @@ from strings import logo, morse
 from pynput import keyboard
 
 
+# Intro cutscene
+def play_intro():
+
+    print("Bienvenue à l'expérience immersive de...")
+    time.sleep(1)
+    for line in logo:
+        print(line)
+        time.sleep(0.5)
+    for c in "      ":
+        sys.stdout.write(c)
+        sys.stdout.flush()
+    for c in "C L I C K E R":
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0.25)
+    time.sleep(1)
+    print("\nAppuyez sur Entrée pour cliquer, et sur \"h\" pour une liste des commandes :)")
+
+
 class Game:
 
     def __init__(self):
@@ -21,7 +40,7 @@ class Game:
         self.enter_pressed = False
         self.game_over = False
 
-        self.play_intro()
+        play_intro()
         self.start_game()
 
     def on_release(self, key):
@@ -59,24 +78,6 @@ class Game:
 
         else:
             print("Invalid command. Did you mean \"c\" (click)?")
-
-    # Intro cutscene
-    def play_intro(self):
-
-        print("Bienvenue à l'expérience immersive de...")
-        time.sleep(1)
-        for line in logo:
-            print(line)
-            time.sleep(0.5)
-        for c in "      ":
-            sys.stdout.write(c)
-            sys.stdout.flush()
-        for c in "C L I C K E R":
-            sys.stdout.write(c)
-            sys.stdout.flush()
-            time.sleep(0.25)
-        time.sleep(1)
-        print("\nAppuyez sur Entrée pour cliquer, et sur \"h\" pour une liste des commandes :)")
 
     # Game logic
     def start_game(self):
