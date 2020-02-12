@@ -1,14 +1,15 @@
-milestone_names = dict()
-milestone_names[1] = "Rambo: First Credit"
-milestone_names[6] = "C'est ça une UV ?"
-milestone_names[20] = "Sur un malentendu..."
-milestone_names[60] = "...ça peut passer"
-milestone_names[96] = "Seuil de crédits scientifiques atteint... LIKE A BOSS"
-milestone_names[180] = "Enfin diplômé"
+milestones = dict()  # maps milestone numbers to achievement names
+milestones[1] = "Rambo: First Credit"
+milestones[6] = "C'est ça une UV ?"
+milestones[20] = "Sur un malentendu..."
+milestones[60] = "...ça peut passer"
+milestones[96] = "Seuil de crédits scientifiques atteint... LIKE A BOSS"
+milestones[180] = "Enfin diplômé"
 
 achievement_list = dict()
 achievement_list["Morse"] = False
-achievement_dict = {}.fromkeys(milestone_names, False)  # Adding milestones achievements to achievement list
+for nb in milestones:  # Adding milestones achievements to achievement list
+    achievement_list[milestones[nb]] = False
 
 
 # If the input achievement exists and is unearned, earns the achievement

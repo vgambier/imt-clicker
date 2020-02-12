@@ -7,7 +7,7 @@ import sys
 import argparse
 from pynput.keyboard import KeyCode
 
-from achievements import earn, milestone_names, achievement_list
+from achievements import earn, milestones, achievement_list
 from strings import logo, morse
 from pynput import keyboard
 import ui
@@ -51,15 +51,15 @@ class Game:
 
     def get_a_credit(self):
         self.credits_ects += 1
-        print(f"Vous avez {self.credits_ects} crédits ECTS!")
+        print(f"Vous avez {self.credits_ects} crédits ECTS !")
 
         if rd.randint(0, 999) == 0:
             print(morse)
             print("Vous avez trouvé un morse ! Curieux.")
             earn("Morse")
 
-        if self.credits_ects in milestone_names:
-            earn(milestone_names[self.credits_ects])
+        if self.credits_ects in milestones:
+            earn(milestones[self.credits_ects])
 
     def on_release(self, key):
         if key == keyboard.Key.enter:  # click
