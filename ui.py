@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QApplication
 from PyQt5 import QtCore
 import sys
-import time as t
 
-class myWidget(QWidget):
+
+class MyWidget(QWidget):
     def __init__(self, game_object=None):
         super().__init__()
         if not game_object:
@@ -18,7 +18,6 @@ class myWidget(QWidget):
         self.setLayout(self.layout)
         self.show()
 
-
     def on_click(self):
         self.game_object.get_a_credit()
         self.score_label.setText(str(self.game_object.credits_ects))
@@ -32,10 +31,5 @@ class myWidget(QWidget):
 
 def launch_widget(game_object):
     app = QApplication(sys.argv)
-    ex = myWidget(game_object)
-    sys.exit(app.exec_())
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = myWidget()
+    ex = MyWidget(game_object)
     sys.exit(app.exec_())
