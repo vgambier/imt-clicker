@@ -6,10 +6,8 @@ milestones[60] = "...ça peut passer"
 milestones[96] = "Seuil de crédits scientifiques atteint... LIKE A BOSS"
 milestones[180] = "Enfin diplômé"
 
-achievement_list = dict()
+achievement_list = {}.fromkeys(milestones.values(), False)  # Initializing achievement dict with milestone achievements
 achievement_list["Morse"] = False
-for nb in milestones:  # Adding milestones achievements to achievement list
-    achievement_list[milestones[nb]] = False
 
 
 # If the input achievement exists and is unearned, earns the achievement
