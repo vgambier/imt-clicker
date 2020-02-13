@@ -8,7 +8,7 @@ milestones[180] = "Enfin diplômé"
 
 achievement_list = {}.fromkeys(milestones.values(), False)  # Initializing achievement dict with milestone achievements
 achievement_list["Morse"] = False
-
+achievement_list["♪ Telecom est une école internationale ♪"] = False
 
 # If the input achievement exists and is unearned, earns the achievement
 def earn(achievement_name):
