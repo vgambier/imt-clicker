@@ -17,7 +17,7 @@ import ui
 def play_intro():
 
     # 1% chance to get the easter egg MIT logo instead of the regular IMT logo
-    if rd.randint(0, 1) == 0:
+    if rd.randint(0, 99) == 0:
         logo = mit_logo
         mit_easter_egg = True
     else:
@@ -37,9 +37,11 @@ def play_intro():
         sys.stdout.flush()
         time.sleep(0.25)
     time.sleep(1)
+
     if mit_easter_egg:
         print()
         earn("♪ Telecom est une école internationale ♪")
+
     print("\nAppuyez sur Entrée pour cliquer, et sur \"h\" pour une liste des commandes :)")
 
 

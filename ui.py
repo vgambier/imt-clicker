@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
+
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QApplication
 from PyQt5 import QtCore, QtGui
 import sys
-
 
 
 class MyWidget(QWidget):
