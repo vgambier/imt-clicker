@@ -3,7 +3,7 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QApplication
 from PyQt5 import QtCore, QtGui
 import sys
-
+from PIL import Image
 
 class MyWidget(QWidget):
     def __init__(self, game_object=None):
@@ -13,18 +13,20 @@ class MyWidget(QWidget):
         self.game_object = game_object
         self.layout = QVBoxLayout()
         ##TODO : set widget size dynamically, depending on image size
+        button_icon = Image.open("./src/button_icon.jpg")
+        image_height = button_icon.height
+        image_width = button_icon.width
         button_stylesheet = """ 
             QWidget{
                 color: white; 
-                height: 186px;
-                width: 280px;
+                height: %s;
+                width: %d;
                 background-image: url("./src/button_icon.jpg"); 
                 background-repeat: no-repeat; 
                 background-position: center;
                 border: none;
             }
-        """
-
+        """ % (image_height, image_width)
         self.credit_button = QPushButton('Click')
         self.credit_button.setStyleSheet(button_stylesheet)
         self.layout.addWidget(self.credit_button)
